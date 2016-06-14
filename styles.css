@@ -5,6 +5,8 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background: url('lib/Forest.jpg');
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -18,50 +20,36 @@ body, a:link, a:visited, a:active{
   height:32px;
   background-color: #555;
 }
+
+.lineup {
+  float: left;
+}
 .title{
   background-color: #777;
 }
-.dancer{
-  border:10px solid red;
-  border-radius:10px;
+/*.dancer{
+  border:50px solid red;
+  border-radius:50px;
   position:absolute;
+}*/
+.gandalf {
+  height: 100px;
+  width: 242px;
+  background: url('lib/gandalf.gif') ;
+  background-size: 242px 100px;
+  position: absolute;
 }
-
-@-webkit-keyframes shake {
-  from, to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
-  }
+.drake {
+  height: 150px;
+  width: 150px;
+  background: url('lib/drake.gif') ;
+  background-size: 150px 150px;
+  position: absolute;
 }
-
-@keyframes shake {
-  from, to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
-  }
-}
-
-.shake {
-  -webkit-animation-name: shake;
-  animation-name: shake;
+.snape {
+  height: 150px;
+  width: 102px;
+  background: url('lib/snape.gif') ;
+  background-size: 102px 150px;
+  position: absolute;
 }

@@ -1,29 +1,20 @@
-var makeNewBlinkyDancer = function(top, left, timeInterval) {
-  return new BlinkyDancer(top, left, timeInterval);
+
+var makeNewShakyDancer = function(top, left, timeInterval) {
+  return new ShakyDancer(top, left, timeInterval);
 };
 
-var makeNewShakyDancer = function(top, left, timeInterval, slideDist) {
-  return new ShakyDancer(top, left, timeInterval, slideDist);
+var makeFadeInDownDancer = function(top, left, timeInterval) {
+  return new FadeInDownDancer(top, left, timeInterval);
 };
 
-var ShakyDancer = function(top, left, timeBetweenSteps, slideDist) {
+var makeNewFlashyDancer = function(top, left, timeInterval) {
+  return new FlashyDancer(top, left, timeInterval);
+};
+
+////////////
+var ShakyDancer = function(top, left, timeBetweenSteps) {
   Dancer.apply(this, arguments);
-  this.slideDist = slideDist;
-  // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
-  // so we must keep a copy of the old version of this function
 
-  // var oldStep = blinkyDancer.step;
-
-  // blinkyDancer.step = function() {
-  //   // call the old version of step at the beginning of any call to this new version of step
-  //   oldStep();
-  //   // toggle() is a jQuery method to show/hide the <span> tag.
-  //   // See http://api.jquery.com/category/effects/ for this and
-  //   // other effects you can use on a jQuery-wrapped html tag.
-  //   blinkyDancer.$node.toggle();
-  // };
-
-  //return blinkyDancer;
 };
 
 ShakyDancer.prototype = Object.create(Dancer.prototype);
@@ -31,7 +22,36 @@ ShakyDancer.prototype.constructor = ShakyDancer;
 
 ShakyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  this.$node.toggleClass('shake animated infinite');
+  this.$node.toggleClass('animated pulse gandalf');
 };
 
+
+////////////
+var FadeInDownDancer = function(top, left, timeBetweenSteps) {
+  Dancer.apply(this, arguments);
+
+};
+
+FadeInDownDancer.prototype = Object.create(Dancer.prototype);
+FadeInDownDancer.prototype.constructor = FadeInDownDancer;
+
+FadeInDownDancer.prototype.step = function() {
+  Dancer.prototype.step.call(this);
+  this.$node.addClass('animated fadeInDown snape');
+};
+
+
+/////////
+var FlashyDancer = function(top, left, timeBetweenSteps) {
+  Dancer.apply(this, arguments);
+
+};
+
+FlashyDancer.prototype = Object.create(Dancer.prototype);
+FlashyDancer.prototype.constructor = FlashyDancer;
+
+FlashyDancer.prototype.step = function() {
+  Dancer.prototype.step.call(this);
+  this.$node.addClass('animated flash drake');
+};
 

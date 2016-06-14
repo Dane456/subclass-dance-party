@@ -21,8 +21,9 @@ body, a:link, a:visited, a:active{
   background-color: #555;
 }
 
-.lineup {
+.left {
   float: left;
+  margin-right:  10px;
 }
 .title{
   background-color: #777;

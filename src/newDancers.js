@@ -1,6 +1,6 @@
 
-var makeNewShakyDancer = function(top, left, timeInterval) {
-  return new ShakyDancer(top, left, timeInterval);
+var makeNewPulsyDancer = function(top, left, timeInterval) {
+  return new PulsyDancer(top, left, timeInterval);
 };
 
 var makeFadeInDownDancer = function(top, left, timeInterval) {
@@ -11,22 +11,23 @@ var makeNewFlashyDancer = function(top, left, timeInterval) {
   return new FlashyDancer(top, left, timeInterval);
 };
 
-////////////
-var ShakyDancer = function(top, left, timeBetweenSteps) {
+////////////gandalf
+var PulsyDancer = function(top, left, timeBetweenSteps) {
   Dancer.apply(this, arguments);
 
 };
 
-ShakyDancer.prototype = Object.create(Dancer.prototype);
-ShakyDancer.prototype.constructor = ShakyDancer;
+PulsyDancer.prototype = Object.create(Dancer.prototype);
+PulsyDancer.prototype.constructor = PulsyDancer;
 
-ShakyDancer.prototype.step = function() {
+PulsyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  this.$node.toggleClass('animated pulse gandalf');
+  this.$node.addClass('gandalf');
+  this.$node.toggleClass('animated pulse');
 };
 
 
-////////////
+////////////snape
 var FadeInDownDancer = function(top, left, timeBetweenSteps) {
   Dancer.apply(this, arguments);
 
@@ -41,7 +42,7 @@ FadeInDownDancer.prototype.step = function() {
 };
 
 
-/////////
+/////////drake
 var FlashyDancer = function(top, left, timeBetweenSteps) {
   Dancer.apply(this, arguments);
 

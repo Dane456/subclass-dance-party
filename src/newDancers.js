@@ -1,5 +1,14 @@
-var BlinkyDancer = function(top, left, timeBetweenSteps) {
+var makeNewBlinkyDancer = function(top, left, timeInterval) {
+  return new BlinkyDancer(top, left, timeInterval);
+};
+
+var makeNewShakyDancer = function(top, left, timeInterval, slideDist) {
+  return new ShakyDancer(top, left, timeInterval, slideDist);
+};
+
+var ShakyDancer = function(top, left, timeBetweenSteps, slideDist) {
   Dancer.apply(this, arguments);
+  this.slideDist = slideDist;
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
@@ -17,10 +26,12 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
   //return blinkyDancer;
 };
 
-BlinkyDancer.prototype = Object.create(Dancer.prototype);
-BlinkyDancer.prototype.constructor = BlinkyDancer;
+ShakyDancer.prototype = Object.create(Dancer.prototype);
+ShakyDancer.prototype.constructor = ShakyDancer;
 
-BlinkyDancer.prototype.step = function() {
+ShakyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  this.$node.toggle();
+  this.$node.toggleClass('shake animated infinite');
 };
+
+
